@@ -8,6 +8,8 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1 or /blogs/1.json
   def show
+    @blogs = Blog.friendly.find(params[:id])
+  end
   end
 
   # GET /blogs/new
