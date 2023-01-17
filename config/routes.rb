@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+#nested routes - remember to change the directories in controllers and views:
+#(create new admin folder and move dashboard controller inside)
+#and inform/rename the dashboard controller
+namespace :admin do  
+  get 'dashboard/main'
+  get 'dashboard/user'
+  get 'dashboard/group'
+end
+
   resources :portfolios
 
   get 'about', to: 'pages#about'

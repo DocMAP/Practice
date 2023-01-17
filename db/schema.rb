@@ -44,6 +44,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_191956) do
     t.text "thumb_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_portfolios_on_slug", unique: true
   end
 
   create_table "skills", force: :cascade do |t|
