@@ -5,6 +5,8 @@
 <div id="blogs">
   <% @blogs.each do |blog| %>
     <%= render blog %>
+    <p> <%= blog.status %>
+    </p>
     <p>
       <%= link_to "Show this blog", blog %>
     </p>
