@@ -25,5 +25,10 @@ end
     
   end
 
+#route for dynamic query routes
+  get 'query/:random', to: 'pages#something'
+  get 'query/:random/:another_one', to: 'pages#something'
+  get 'query/:random/:another_one/:and_another', to: 'pages#something'
+
   root to: 'pages#home'
 end

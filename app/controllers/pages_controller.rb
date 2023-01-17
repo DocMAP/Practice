@@ -9,4 +9,11 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+#part of dynamic query route
+  def something
+    @random = params[:random]
+    @another_one = params[:another_one]
+    @and_another = params[:and_another]
+  end
 end
