@@ -10,6 +10,8 @@ namespace :admin do
 end
 
   resources :portfolios
+  get 'portfolios/*missing', to: 'portfolios#missing'
+  #globbing allows for anything after portfolios/ in the browser to redirect
 
   get 'about', to: 'pages#about'
 
@@ -18,8 +20,7 @@ end
   
   resources :blogs do
     member do
-      get :toggle_status
-      
+      get :toggle_status     
     end
     
   end
