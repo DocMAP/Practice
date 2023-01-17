@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :portfolios
 
-  get 'pages/about'
-  get 'pages/contact'
+  get 'about', to: 'pages#about'
+
+  get 'contact', to: 'pages#contact', as: 'info' 
+  #only changes the method name to 'info' in routes not the view
   
   resources :blogs do
     member do
