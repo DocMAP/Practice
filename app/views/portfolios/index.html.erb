@@ -2,10 +2,13 @@
 
 <%= link_to "Create New Item", new_portfolio_path %>
 
-<% @portfolio_items.each do |portfolio_item| %>
+<% @portfolio_item.each do |portfolio_item| %>
 	<p><%= portfolio_item.title.upcase %></p>
 	<p><%= portfolio_item.subtitle %></p>
 	<p><%= portfolio_item.body %></p>
 	<%= image_tag portfolio_item.main_image %>
 	<%= image_tag portfolio_item.thumb_image %>
+	<p>
+      <%= button_to "Delete this Portfolio Item", @portfolio_items, method: :delete %>
+    </p>
 <% end %>
