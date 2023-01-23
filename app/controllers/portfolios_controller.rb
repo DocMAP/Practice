@@ -40,8 +40,6 @@ class PortfoliosController < ApplicationController
 
   def destroy
     @portfolio_item.destroy
-
-
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: "Portfolio was successfully deleted." }
     end
