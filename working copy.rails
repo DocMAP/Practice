@@ -1,1 +1,4 @@
-   @blog.published! if @blog.draft?
+# under 
+def edit:
+@portfolio_item = Portfolio.find(params[:id])
+end
