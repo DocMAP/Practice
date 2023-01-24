@@ -2,8 +2,14 @@
 
 <%= render @portfolio_item %>
 
+<h2>Technologies Used:</h2>
+
+<% @portfolio_item.technologies.each do |t| %>
+  <p><%= t.name %></p>
+  <% end %>
+
 <div>
-  <%= link_to "Edit this Portfolio", edit_portfolio_path(@portfolio_item) %>
+  <%= link_to "Edit this Portfolio", edit_portfolio_item_path(@portfolio_item) %>
   <%= link_to "Back to Portfolio Items", portfolio_item_path %>
 
   <%= button_to "Delete this Portfolio Item", @portfolio_items, method: :delete %>

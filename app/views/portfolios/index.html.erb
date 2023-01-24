@@ -8,7 +8,13 @@
 	<p><%= portfolio_item.body %></p>
 	<%= image_tag portfolio_item.main_image %>
 	<%= image_tag portfolio_item.thumb_image %>
+	<h2>Technologies Used:</h2>
+    <p><%= portfolio_item.technologies %></p>
+   
 	<p>
-    <%= button_to "Delete this Portfolio Item", @portfolio_items, method: :delete %>
+      <%= link_to "Show this Portfolio", edit_portfolio_path(@portfolio_item) %>
+    </p>
+	<p>
+    <%= button_to "Delete this Portfolio Item", @portfolio, method: :delete %>
     </p>
 <% end %>
