@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
 
 #nested routes - remember to change the directories in controllers and views:
 #(create new admin folder and move dashboard controller inside)
