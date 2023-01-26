@@ -1,6 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
+<style>
+  h1 {
+        font-size: 36px;
+        font-style: italic;
+        border: double;
+        display: flex;
+        justify-content: center;
+        text-shadow: 2px 2px 4px #000000;
+        box-shadow: 5px 5px #000000;
+      }
+</style>
+
+
+<%= link_to "Return to Home", home_path %>
+
 <h1>Blogs</h1>
+<%= link_to "Create New blog", new_blog_path %>
 
 <div id="blogs">
   <% @blogs.each do |blog| %>
@@ -9,8 +25,9 @@
     </p>
     <p>
       <%= link_to "Show this blog", blog %>
+      <%= link_to "Delete this blog", @blog, data: { turbo: true, turbo_method: :delete } %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New blog", new_blog_path %>
+
