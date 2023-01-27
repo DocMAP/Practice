@@ -32,6 +32,6 @@
       <%= link_to "Show this Portfolio", @portfolio_item_path %>
     </p>
 	<p>
-    <%= button_to "Delete this Portfolio Item", @portfolio, method: :delete %>
+    <%= link_to "Delete this Portfolio Item", @portfolio, data: { turbo_method: :delete } %>
     </p>
 <% end %>
