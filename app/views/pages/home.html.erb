@@ -1,13 +1,100 @@
+<h4>Welcome <%=current_user.first_name if current_user %>!</h4>
 <h1>Home Page</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<head>
+    <title>My First HTML home page</title>
+    <style>
+      img {
+        width: 200px;
+        border-radius: 100px;
+        float: left;
+        margin-right: 20px;
+      }
 
-<h1>Blog Posts</h1>
+      p.username {
+        font-weight: bold;
+        font-size: 24px;
+      }
+      h1 {
+        font-size: 36px;
+        font-style: italic;
+        border: double;
+        display: flex;
+        justify-content: center;
+        text-shadow: 2px 2px 4px #000000;
+        box-shadow: 5px 5px #000000;
+      }
+      h2 {
+        font-size: 30px;
+        font-style: italic;
+        border: single;
+        display: flex;
+        justify-content: center;
+        color: aliceblue;
+        text-shadow: 2px 2px 4px #000000;
+        text-decoration: underline;
+      }
+      h3 {
+      	font-size: 24px;
+        margin-bottom: 5px;
+        margin-left: 70px;
+        text-decoration: underline;
+      }
+      h4 {
+        display: flex;
+        justify-content: center;
+        color: darkseagreen;
+      }
+
+      .columns {
+        column-count: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <a href= about >About Me</a>
+    <a href="mailto:mark@popwell.com">Email Me</a>
+    <h2>Imported HTML from VS Code</h2>
+    <img src="images/Formated_6013.png" alt="image could not be displayed" />
+    <p class="username">
+      Follow on
+      <a href="https://twitter.com/MarkPopwell" target="_blank">Twitter</a>
+      @MarkPopwell or on
+      <a href="https://facebook.com/" target="_blank">Facebook</a>
+      that I will never see. . . totally up to you.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni veniam
+      molestiae eligendi quam. Inventore vitae expedita, quibusdam dolorum iure
+      placeat necessitatibus fugiat eum suscipit distinctio laboriosam magnam
+      aspernatur tempora cumque dignissimos eius perspiciatis soluta delectus
+      quaerat quod eos quidem laudantium. Consequuntur praesentium sint facere
+      quibusdam quam est necessitatibus ratione eligendi. Nihil inventore
+      deleniti dolores iure quisquam quo at totam labore amet! Laudantium
+      dignissimos odio accusamus perspiciatis voluptatem eveniet est, quidem,
+      dicta, corrupti vitae earum. In sunt neque nam? Ut mollitia eos optio ab
+      dolor, officia fugit similique amet vero quae dolorum voluptatem.
+    </p>
+    <h3> Column Section</h3>
+    <div class="columns">
+      Incidunt animi sapiente et molestias officia eius iusto hic beatae odit
+      omnis? Aperiam neque esse libero voluptatibus cumque vel architecto
+      explicabo minus labore numquam quod, deserunt odio. Natus facilis culpa
+      nihil voluptatum libero perferendis repudiandae maiores laborum dicta
+      sint. Voluptate eius natus vero aut laboriosam, fuga deserunt tempora
+      perspiciatis. Dolore, itaque soluta molestiae repudiandae voluptates,
+      neque blanditiis, possimus cum laudantium laborum nemo. Vero in suscipit
+      sunt tempore illo maiores harum sequi necessitatibus magnam qui,
+      temporibus nihil veritatis, dignissimos rerum libero, voluptatum tempora
+      veniam soluta reprehenderit aspernatur ex architecto repellat enim non.
+      Doloribus!
+    </div>
+  </body>
+
+<h1><%= link_to "Portfolio Items", portfolios_path %></h1>
+
+<h1><%= link_to "Blog Posts", blogs_path %></h1>
 <%= @posts.inspect %>
 
 <h1>Skills</h1>
 <%= @skills.inspect %>
 
-<h2>Trial Header 2</h2>
-	<p>
-	Lorem ipsum dolor sit amet consectetur adipisicing elit.
-	</p>

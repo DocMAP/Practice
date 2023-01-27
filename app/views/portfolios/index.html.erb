@@ -1,5 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
+<style>
+  h1 {
+        font-size: 36px;
+        font-style: italic;
+        border: double;
+        display: flex;
+        justify-content: center;
+        text-shadow: 2px 2px 4px #000000;
+        box-shadow: 5px 5px #000000;
+      }
+</style>
+
+
+<%= link_to "Return to Home", home_path %>
 
 <h1>Portfolio Items</h1>
 
@@ -15,9 +29,9 @@
     <p><%= portfolio_item.technologies %></p>
    
 	<p>
-      <%= link_to "Show this Portfolio", edit_portfolio_path(@portfolio_item) %>
+      <%= link_to "Show this Portfolio", @portfolio_item_path %>
     </p>
 	<p>
-    <%= button_to "Delete this Portfolio Item", @portfolio, method: :delete %>
+    <%= link_to "Delete this Portfolio Item", @portfolio, data: { turbo_method: :delete } %>
     </p>
 <% end %>
