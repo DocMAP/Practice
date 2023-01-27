@@ -1,3 +1,4 @@
+<h4>Welcome <%=current_user.first_name if current_user %>!</h4>
 <h1>Home Page</h1>
 <head>
     <title>My First HTML home page</title>
@@ -37,6 +38,11 @@
         margin-bottom: 5px;
         margin-left: 70px;
         text-decoration: underline;
+      }
+      h4 {
+        display: flex;
+        justify-content: center;
+        color: darkseagreen;
       }
 
       .columns {
