@@ -30,8 +30,13 @@
    
 	<p>
       <%= link_to "Show this Portfolio", @portfolio_item_path %>
+          <a href= portfolio/:id >Show this Portfolio</a>
     </p>
 	<p>
     <%= link_to "Delete this Portfolio Item", @portfolio, data: { turbo_method: :delete } %>
     </p>
+
+    <hr>
+
+    <%= params.inspect %>
 <% end %>

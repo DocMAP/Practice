@@ -3,7 +3,6 @@
 <%= render @portfolio_item %>
 
 <h2>Technologies Used:</h2>
-
 <% @portfolio_item.technologies.each do |t| %>
   <p><%= t.name %></p>
   <% end %>
@@ -14,3 +13,15 @@
 
   <%= button_to "Delete this Portfolio Item", @portfolio_items, method: :delete %>
 </div>
+
+<hr>
+
+<%= params.inspect %>
+
+<hr>
+
+<%= session.inspect %>
+
+    <% if session[:source] %>
+    <p>Thanks for visiting from <%= session[:source] %><p>
+    <% end %>

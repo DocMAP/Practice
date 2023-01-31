@@ -11,7 +11,7 @@ namespace :admin do
 end
 
   resources :portfolios
-  get 'portfolios/*missing', to: 'portfolios#missing'
+  get 'portfolio/:id', to: 'portfolios#show'
   #globbing allows for anything after portfolios/ in the browser to redirect
 
   get 'about', to: 'pages#about'

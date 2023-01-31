@@ -10,3 +10,10 @@ module DeviseWhitelist
 		defdevise_parameter_sanitizer.permit(:account_update, keys: [:name])
 	end
 end
+
+from portfolios show page:
+<% @portfolio_item.technologies.each do |t| %>
+  <p><%= t.name %></p>
+  <% end %>
+
+  <%= render @portfolio_item %>
