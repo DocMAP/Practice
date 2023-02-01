@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @portfolio_item %>
+<%= @portfolio_item.inspect %>
 
 <h2>Technologies Used:</h2>
 <% @portfolio_item.technologies.each do |t| %>
@@ -8,8 +8,8 @@
   <% end %>
 
 <div>
-  <%= link_to "Edit this Portfolio", edit_portfolio_item_path(@portfolio_item) %>
-  <%= link_to "Back to Portfolio Items", portfolio_item_path %>
+  <%= link_to "Edit this Portfolio", edit_portfolio_path(@portfolio_item) %>
+  <%= link_to "Back to Portfolio Items", portfolios_path %>
 
   <%= button_to "Delete this Portfolio Item", @portfolio_items, method: :delete %>
 </div>

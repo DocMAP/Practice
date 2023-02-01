@@ -25,7 +25,8 @@
     </p>
     <p>
       <%= link_to "Show this blog", blog %>
-      <%= link_to "Delete this blog", @blog, data: { turbo: true, turbo_method: :delete } %>
+      <%= link_to "Delete this blog", @blog, method: :delete %>
+      <%= button_to "Delete this blog", @blog, data: { turbo: true, turbo_method: :delete } %>
     </p>
   <% end %>
 </div>

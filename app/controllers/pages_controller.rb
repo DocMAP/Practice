@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def about
+    @browser_title = "Biography"
   end
 
   def contact
