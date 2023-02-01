@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: %i[ show edit update destroy]
+  layout 'portfolios'
 
 	def index
 		@portfolio_items = Portfolio.all #change to 'react' or 'ruby_on_rails' to filter the DB
