@@ -14,13 +14,11 @@
   
     <body>
     <%= login_helper %>
+    <%= source_helper("application") %>
 
     <%= yield %>
 
     <%= render "shared/nav", location: 'bottom' %>
-    
-<% if session[:source] %>
-    <p>Thanks for visiting from <%= session[:source] %><p>
-    <% end %>
+
   </body>
 </html>
