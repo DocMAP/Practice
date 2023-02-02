@@ -1,41 +1,27 @@
 <p style="color: green"><%= notice %></p>
-
-<style>
-  h1 {
-        font-size: 36px;
-        font-style: italic;
-        border: double;
-        display: flex;
-        justify-content: center;
-        text-shadow: 2px 2px 4px #000000;
-        box-shadow: 5px 5px #000000;
-      }
-</style>
-
-
-<%= link_to "Return to Home", home_path %>
+<p><%= link_to "Return to Home", home_path %></p>
 
 <h1>Portfolio Items</h1>
 
 <%= link_to "Create New Item", new_portfolio_path %>
 
 <% @portfolio_items.each do |portfolio_item| %>
-	<p><%= portfolio_item.title.upcase %></p>
-	<p><%= portfolio_item.subtitle %></p>
-	<p><%= portfolio_item.body %></p>
-	<%= image_tag portfolio_item.main_image %>
-	<%= image_tag portfolio_item.thumb_image %>
-	<h2>Technologies Used:</h2>
+  <p><%= portfolio_item.title.upcase %></p>
+  <p><%= portfolio_item.subtitle %></p>
+  <p><%= portfolio_item.body %></p>
+  <%= image_tag portfolio_item.main_image %>
+  <%= image_tag portfolio_item.thumb_image %>
+  <h2>Technologies Used:</h2>
     <p><%= portfolio_item.technologies %></p>
    
-	<p>
+  <p>
       <%= link_to "Show this Portfolio", portfolio_item %>
     </p>
-	<p>
+  <p>
     <%= button_to "Delete this Portfolio Item", @portfolio_item, method: :delete %>
     </p>
 
     <hr>
 
     <%= params.inspect %>
-<% end %>
+    <% end %>

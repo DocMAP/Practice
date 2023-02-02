@@ -5,3 +5,13 @@ body {
 .bottom a {
 	color: red;
 }
+
+h1 {
+    font-size: 36px;
+    font-style: italic;
+    border: double;
+    display: flex;
+    justify-content: center;
+    text-shadow: 2px 2px 4px #000000;
+    box-shadow: 5px 5px #000000;
+  }
