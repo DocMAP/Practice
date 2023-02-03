@@ -19,4 +19,9 @@
     <%= blog.topic_id %>
   </p>
 
+<p>
+  <strong>Posted:</strong>
+    <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
+  </p>
+
 </div>
