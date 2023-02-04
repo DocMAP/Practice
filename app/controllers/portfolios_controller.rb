@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
 
 	def index
 		@portfolio_items = Portfolio.all #change to 'react' or 'ruby_on_rails' to filter the DB
-	  @browser_title = "My Portfolio"
+    @browser_title = "My Portfolio"
   end
 
   def show

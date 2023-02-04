@@ -12,7 +12,7 @@
   <%= image_tag portfolio_item.main_image %>
   <%= image_tag portfolio_item.thumb_image %>
   <h2>Technologies Used:</h2>
-    <p><%= portfolio_item.technologies %></p>
+  <%= portfolio_item.technologies.name %>
    
   <p>
       <%= link_to "Show this Portfolio", portfolio_item %>

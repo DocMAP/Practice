@@ -90,7 +90,10 @@
     </div>
   </body>
 
-<h1><%= link_to "Portfolio Items", portfolios_path %></h1>
+<h1><%= link_to "Current Portfolio Items:", portfolios_path %></h1>
+    <% @portfolio_items.each do |portfolio_item| %>
+    <p><%= portfolio_item.title %></p>
+    <% end %>
 
 <h1><%= link_to "Blog Posts", blogs_path %></h1>
 <%= @posts.inspect %>
