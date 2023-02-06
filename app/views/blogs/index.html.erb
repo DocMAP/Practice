@@ -2,17 +2,17 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Blogs</h1>
-<%= link_to "Create New blog", new_blog_path %>
+<%= link_to "Create New blog", new_blog_path if logged_in?(:admin, :editor) %>
 
 <div id="blogs">
   <% @blogs.each do |blog| %>
     <%= render blog %>
-    <p> <%= link_to blog.status, toggle_status_blog_path(blog) %>
+    <p> <%= link_to blog.status, toggle_status_blog_path(blog) if logged_in?(:admin)%>
     </p>
     <p>
       <%= link_to "Show this blog", blog %>
-      <%= link_to "Delete this blog", @blog, method: :delete %>
-      <%= button_to "Delete this blog", @blog, data: { turbo: true, turbo_method: :delete } %>
+      <%= link_to "Delete this blog", @blogs_path, method: :delete if logged_in?(:admin, :editor) %>
+      <%= button_to "Delete this blog", @blog, data: { turbo: true, turbo_method: :delete } if logged_in?(:admin, :editor) %>
     </p>
   <% end %>
 </div>

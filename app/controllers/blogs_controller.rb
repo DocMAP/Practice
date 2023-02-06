@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[ show edit update destroy toggle_status]
   layout "blogs"
+  access all: [:show, :index], user: {except: [:destroy, :new, :edit, :update, :toggle_status]}, admin: :all, editor: {except: [:toggle_status]}
 
   # GET /blogs or /blogs.json
   def index
