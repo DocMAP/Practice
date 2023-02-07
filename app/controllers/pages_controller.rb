@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @browser_title = "Contact Me"
   end
 
 #part of dynamic query route
