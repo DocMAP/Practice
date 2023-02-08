@@ -55,3 +55,10 @@ from _portfolio.html.erb:
   <%= image_tag @portfolio_item.thumb_image %>
 
 </div>
+
+from home:
+    <div class="portfolio_titles">
+      <% @portfolio_items.each do |portfolio_item| %>
+      <p><%= portfolio_item.title %></p>
+    <% end %>
+    </div>

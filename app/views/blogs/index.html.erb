@@ -263,7 +263,7 @@
     <p>
       <%= link_to "Show this blog", blog %>
       <%= link_to "Delete this blog", @blogs_path, method: :delete if logged_in?(:admin, :editor) %>
-      <%= button_to "Delete this blog", @blog, data: { turbo: true, turbo_method: :delete } if logged_in?(:admin, :editor) %>
+      <%= button_to "Delete this blog", @blog, data: { turbo: true, turbo_method: :delete }, class: 'btn btn-outline-danger' if logged_in?(:admin, :editor) %>
     </p>
   <% end %>
 </div>

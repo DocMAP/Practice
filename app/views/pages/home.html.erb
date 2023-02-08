@@ -2,7 +2,7 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">Mark Popwell</h3>
+      <h5 class="float-md-start mb-0">by Mark Popwell</h5>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <%= render "shared/application_nav" %>
       </nav>
@@ -58,6 +58,12 @@
       .columns {
         column-count: 3;
       }
+
+      .portfolio_titles {
+        display: flex;
+        justify-content: center;
+        color: hotpink;
+      }
     </style>
   </head>
   <body>
@@ -100,9 +106,12 @@
   </body>
 
 <h1><%= link_to "Current Portfolio Items:", portfolios_path %></h1>
-    <% @portfolio_items.each do |portfolio_item| %>
-    <p><%= portfolio_item.title %></p>
+      <% @portfolio_items.each do |portfolio_item| %>
+      <div class="portfolio_titles">
+        <p><%= portfolio_item.title %></p>
+      </div>
     <% end %>
+
 
 <h1><%= link_to "Blog Posts", blogs_path %></h1>
 <%= @posts.inspect %>

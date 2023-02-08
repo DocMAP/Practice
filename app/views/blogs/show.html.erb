@@ -6,6 +6,6 @@
   <%= link_to "Edit this blog", edit_blog_path(@blog) if logged_in?(:admin, :editor) %>
   <%= link_to "Back to blogs", blogs_path %>
 
-  <%= button_to "Delete this blog", @blog, method: :delete if logged_in?(:admin, :editor) %>
+  <%= button_to "Delete this blog", @blog, method: :delete, class: 'btn btn-outline-danger' if logged_in?(:admin, :editor) %>
 </div>
 
