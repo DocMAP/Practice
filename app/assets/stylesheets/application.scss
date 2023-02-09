@@ -26,6 +26,7 @@ body {
 
 .cover-container {
   max-width: 100em;
+  vertical-align: top;
 }
 
 
@@ -51,3 +52,18 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
+
+/*
+ * Custom Styles
+ */
+
+ .card-block {
+    color: black;
+ }
+
+ .auth-links a {
+    color: black;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+ }
