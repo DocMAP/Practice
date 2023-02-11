@@ -14,12 +14,24 @@
     <%= javascript_importmap_tags %>
   </head>
   
-    <body>
-      
-    <%= yield %>
+  <body>
+    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h5 class="float-md-start mb-0">Some Info Here</h5>
+            <nav class="nav nav-masthead justify-content-center float-md-end">
+              <%= render "shared/application_nav" %>
+            </nav>
+          </div>
+        </header>
+      </div>
+    </div>
 
-    <%= render "shared/nav", location: 'bottom' %>
+      <%= yield %>
     
-    <%= source_helper("blogs") %>
+    
   </body>
+
+    <%= render "shared/blog_footer" %>
+
 </html>

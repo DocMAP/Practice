@@ -67,6 +67,7 @@ group :development do
   gem 'bootstrap', '~> 5.2.2'
   gem 'jquery-rails'
   gem 'petergate', '~> 3.0'
+  gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 
 end
 

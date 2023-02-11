@@ -11,10 +11,6 @@
   </div>
 </div>
 
-  <%= render "shared/application_nav" %>
-
-
-<p style="color: green"><%= notice %></p>
 
 <h1>Blogs</h1>
 <%= link_to "Create New blog", new_blog_path if logged_in?(:admin, :editor) %>
@@ -262,12 +258,6 @@
 
 </main>
 
-<footer class="blog-footer">
-  <p>Blog template built with <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/MarkPopwell">@MarkPopwell</a>.</p>
-  <p>
-    <a href="#">Back to top</a>
-  </p>
-</footer>
 
 <div id="blogs">
   <% @blogs.each do |blog| %>
