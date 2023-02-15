@@ -19,6 +19,29 @@ prev _portfolio.htmel.erb
 
 </div>
 
+<div class="col">
+  <div class="card shadow-sm">
+    {{< placeholder >}}
+    <% @portfolio_items.each do |portfolio_item| %>
+      <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
+    <% end %>
+      <div class="card-body">
+        <p class="card-text">
+          <% @portfolio_items.each do |portfolio_item| %>
+            <%= portfolio_item.title.upcase %>
+          <% end %>
+        </p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+        <small class="text-muted">9 mins</small>
+      </div>
+    </div>
+  </div>
+</div>
+
 from portfolios show page:
 <% @portfolio_item.technologies.each do |t| %>
   <p><%= t.name %></p>
