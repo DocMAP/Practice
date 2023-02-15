@@ -9,6 +9,10 @@ class Portfolio < ApplicationRecord
 		where(subtitle: "React")
 	end
 
+	def self.by_position
+		order("position ASC")
+	end
+
 	#same as above written differently
 	scope :ruby_on_rails, ->{ where(subtitle: 'Ruby on Rails') }
 
