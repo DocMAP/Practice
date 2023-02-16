@@ -20,6 +20,6 @@ class Portfolio < ApplicationRecord
 
 	def set_defaults
 		self.main_image ||= "https://place-hold.it/300x200"
-		self.thumb_image ||= "https://place-hold.it/200x100"
+		self.thumb_image ||= "https://place-hold.it/356x280"
 	end
 end
