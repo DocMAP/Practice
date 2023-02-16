@@ -21,6 +21,11 @@
   right: 0;
 }
 
+.nav-link:hover {
+  text-decoration: underline;
+  color: black;
+}
+
 
 
 .blog-header {
@@ -92,6 +97,10 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
 	background-color: whitesmoke;
+}
+
+.bottom a:hover {
+  color: darkred;
 }
 
 

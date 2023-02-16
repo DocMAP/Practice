@@ -52,9 +52,10 @@
           </div>
 
           <div class="col-md-4 text-center justify-content-center display-flex">
+            <br>
 
             <p>
-              <%= button_to "Back to Portfolio Items", portfolios_path, class: 'btn btn-outline-primary' %>
+              <%= link_to "Back to Portfolio Items", portfolios_path %>
             </p>
 
           </div>
@@ -80,31 +81,11 @@
   </div>
 </div>
 
-
-
 <hr>
-<h1>Old show</h1>
-<%= render "portfolio" %>
-
-<h2>Technologies Used:</h2>
-<% @portfolio_item.technologies.each do |t| %>
-  <p><%= t.name %></p>
-  <% end %>
-
-<div>
-  <%= link_to "Edit this Portfolio", edit_portfolio_path(@portfolio_item) if logged_in?(:admin) %>
-  <%= link_to "Back to Portfolio Items", portfolios_path %>
-
-  <%= button_to "Delete this Portfolio Item", @portfolio_items, method: :delete if logged_in?(:admin) %>
-</div>
-
-<hr>
-
-<%= params.inspect %>
-
-<hr>
-
+<h4>Obviously removable session inspection:</h4>
 <%= session.inspect %>
+
+<hr>
 
     <% if session[:source] %>
     <p>Thanks for visiting from <%= session[:source] %><p>
