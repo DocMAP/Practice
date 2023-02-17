@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_06_213440) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_16_214833) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_06_213440) do
     t.string "slug"
     t.integer "status", default: 0, null: false
     t.bigint "topic_id"
+    t.integer "position"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
     t.index ["topic_id"], name: "index_blogs_on_topic_id"
   end
@@ -47,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_06_213440) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.integer "position"
     t.index ["slug"], name: "index_portfolios_on_slug", unique: true
   end
 

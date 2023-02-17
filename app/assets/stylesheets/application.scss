@@ -7,7 +7,11 @@
  */
 
 
+/*
+ *= require jquery-ui
+ */
 
+ 
 /* Custom default button */
 .btn-light,
 .btn-light:hover,
@@ -46,6 +50,12 @@ body {
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
   border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-link:hover {
+  color: black;
+  font-style: italic;
+  text-decoration: underline;
 }
 
 .nav-masthead .nav-link + .nav-link {

@@ -24,6 +24,7 @@
 <div class="col d-flex justify-content-center">
   <div class="row">
     <div class="col-md-12 text-left">
+      <%= render "devise/shared/error_messages", resource: resource %>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
         <div class="field">

@@ -9,6 +9,10 @@ class Portfolio < ApplicationRecord
 		where(subtitle: "React")
 	end
 
+	def self.by_position
+		order("position ASC")
+	end
+
 	#same as above written differently
 	scope :ruby_on_rails, ->{ where(subtitle: 'Ruby on Rails') }
 
@@ -16,6 +20,6 @@ class Portfolio < ApplicationRecord
 
 	def set_defaults
 		self.main_image ||= "https://place-hold.it/300x200"
-		self.thumb_image ||= "https://place-hold.it/200x100"
+		self.thumb_image ||= "https://place-hold.it/356x280"
 	end
 end

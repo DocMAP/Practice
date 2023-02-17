@@ -7,3 +7,7 @@ class Blog < ApplicationRecord
 
   belongs_to :topic
   end
+
+  def self.by_position
+    order("position ASC")
+  end

@@ -1,15 +1,46 @@
-module DeviseWhitelist
-	extend ActiveSupport::Concern
+prev _portfolio.htmel.erb
+<div id="<%= dom_id @portfolio_item %>">
+  <%= image_tag @portfolio_item.main_image %>
+  <p>
+    <strong>Title:</strong>
+    <%= @portfolio_item.title.upcase %>
+  </p>
 
-	include do
-		before_action :configure_permitted_parameters, if: :devise_controller?
-	end
+  <p>
+    <strong>Subtitle:</strong>
+    <%= @portfolio_item.subtitle %>
+  </p>
 
-	def configure_permitted_parameters
-		devise_parameter_sanitizer.permit(:sign_up, keys: [:name]) 
-		defdevise_parameter_sanitizer.permit(:account_update, keys: [:name])
-	end
-end
+  <p>
+    <strong>Content:</strong>
+    <%= @portfolio_item.body %>
+  </p>
+  <%= image_tag @portfolio_item.thumb_image %>
+
+</div>
+
+<div class="col">
+  <div class="card shadow-sm">
+    {{< placeholder >}}
+    <% @portfolio_items.each do |portfolio_item| %>
+      <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
+    <% end %>
+      <div class="card-body">
+        <p class="card-text">
+          <% @portfolio_items.each do |portfolio_item| %>
+            <%= portfolio_item.title.upcase %>
+          <% end %>
+        </p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+        <small class="text-muted">9 mins</small>
+      </div>
+    </div>
+  </div>
+</div>
 
 from portfolios show page:
 <% @portfolio_item.technologies.each do |t| %>

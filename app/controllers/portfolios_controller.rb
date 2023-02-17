@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :edit, :update]}, admin: :all
 
 	def index
-		@portfolio_items = Portfolio.all #change to 'react' or 'ruby_on_rails' to filter the DB
+		@portfolio_items = Portfolio.by_position #change to 'react' or 'ruby_on_rails' to filter the DB
     @browser_title = "My Portfolio"
   end
 
