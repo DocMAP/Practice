@@ -10,4 +10,4 @@ eagerLoadControllersFrom("controllers", application)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
 // Default SortableJS
-import Sortable from 'sortablejs';
+// import Sortable from 'sortablejs';

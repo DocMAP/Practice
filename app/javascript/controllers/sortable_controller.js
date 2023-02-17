@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import Sortable from "sortablejs"
+// import Sortable from "sortablejs"
 import { FetchRequest } from '@rails/request.js'
 
 // Connects to data-controller="sortable"
