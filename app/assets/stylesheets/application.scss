@@ -71,14 +71,51 @@ body {
  * Custom Styles
  */
 
- .card-block {
-    color: black;
- }
+.card-block {
+  color: black;
+}
 
- .auth-links a {
-    color: black;
-    text-align: center;
-    justify-content: center;
+.auth-links a {
+  color: black;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+
+}
+
+h1 {
+    font-size: 36px;
+    font-style: italic;
+    border: double;
     display: flex;
+    justify-content: center;
+    text-shadow: 2px 2px 4px #000000;
+    box-shadow: 5px 5px #000000;
+  }
+h2 {
+  font-size: 30px;
+  font-style: italic;
+  border: single;
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  text-shadow: 2px 2px 4px #000000;
+  text-decoration: underline;
+  }
 
- }
+  #background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: image-url('Coffee.jpg') no-repeat;
+    background-size: cover;
+  }
+
+

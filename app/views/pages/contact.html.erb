@@ -2,7 +2,7 @@
   <header class="mb-auto">
     <title><%= @browser_title %></title>
     <div>
-      <h3 class="float-md-start mb-0">Could be 3 rows</h3>
+      <h3 class="float-md-start mb-0">Mark's Contact</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <%= render "shared/application_nav" %>
       </nav>
@@ -10,17 +10,19 @@
   </header>
 
   <main class="px-3">
-    <hr>
     <div class="row">
       <div class="col-md-8 text-center">
         <h1>How to Reach Me</h1>
+        <br>
           <h2>Address</h2>
             
           <p>2249 Hoopes Ave, Idaho Falls, ID 83404</p>
+          <br>
 
           <h2>Phone</h2>
 
           <p><%= number_to_phone "3348683488" %></p>
+          <br>
 
           <h2>Email</h2>
 
@@ -30,19 +32,26 @@
     <div class="col-md-4">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.1984382463606!2d-111.99602028451874!3d43.47732897912769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53545eded0a93eb7%3A0xe38bc1a3c627bab6!2s2249%20Hoopes%20Ave%2C%20Idaho%20Falls%2C%20ID%2083404!5e0!3m2!1sen!2sus!4v1675813203816!5m2!1sen!2sus" width="400" height="400" style="border:0; float: right;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+
   </div>
-
-    <hr>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
       <p class="lead">
         <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white justify-content-center display-flex">Learn more</a>
       </p>
   </main>
 
-  <footer class="mt-auto text-white-50">
+  <footer class="mt-auto text-white-50 d-flex justify-content-center">
     <p>Created with <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/MarkPopwell" class="text-white">@MarkPopwell</a>.</p>
   </footer>
 </div>
+
+<hr>
 
 <h2>Misc. Link to's</h2>
 <p><%= number_to_phone "2088675309" %></p>
