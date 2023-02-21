@@ -1,3 +1,17 @@
+<%= form_with(model: blog) do |form| %>
+  <% if blog.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+        <% blog.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
 prev _portfolio.htmel.erb
 <div id="<%= dom_id @portfolio_item %>">
   <%= image_tag @portfolio_item.main_image %>
