@@ -1,3 +1,8 @@
+      <li>
+        <%= technology_form.label :technology %>
+        <%= technology_form.text_field :name %>
+      </li>
+
 <%= form_with(model: blog) do |form| %>
   <% if blog.errors.any? %>
     <div style="color: red">

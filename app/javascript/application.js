@@ -8,3 +8,5 @@ import "@hotwired/turbo-rails"
 //= require jquery
 // require jquery_ujs
 // require jquery-uiimport "@rails/request.js"
+//= require cocoon
+//= require gritter

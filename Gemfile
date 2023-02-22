@@ -56,6 +56,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+end
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -72,10 +73,6 @@ group :development do
   gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
   gem 'acts_as_list', '~> 1.0.4'
   gem 'requestjs-rails'
-
-end
-
-
-
-
-gem "hotwire-rails", "~> 0.1.3"
+  gem "hotwire-rails", "~> 0.1.3"
+  gem 'cocoon', '~> 1.2', '>= 1.2.15'
+  gem 'gritter', '~> 1.2'
