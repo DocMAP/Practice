@@ -264,6 +264,7 @@
 <div id="blogs">
   <% @blogs.each do |blog| %>
     <%= render blog %>
+    
     <p> <%= link_to blog.status, toggle_status_blog_path(blog) if logged_in?(:admin)%>
     </p>
     <p>

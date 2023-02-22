@@ -3,40 +3,34 @@
         <%= technology_form.text_field :name %>
       </li>
 
-<%= form_with(model: blog) do |form| %>
-  <% if blog.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
-      <ul>
-        <% blog.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-prev _portfolio.htmel.erb
-<div id="<%= dom_id @portfolio_item %>">
-  <%= image_tag @portfolio_item.main_image %>
+<div id="<%= dom_id blog %>">
   <p>
-    <strong>Title:</strong>
-    <%= @portfolio_item.title.upcase %>
-  </p>
-
-  <p>
-    <strong>Subtitle:</strong>
-    <%= @portfolio_item.subtitle %>
+    <strong>Blog Title:</strong>
+    <%= blog.title %>
   </p>
 
   <p>
     <strong>Content:</strong>
-    <%= @portfolio_item.body %>
+    <%= blog.body %>
   </p>
-  <%= image_tag @portfolio_item.thumb_image %>
+
+  <p>
+    <strong>Comments:</strong>
+    <%= blog.comments %>
+  </p>
+
+</p>
+    <strong>Topic:</strong>
+    <%= blog.topic_id %>
+  </p>
+
+<p>
+  <strong>Posted:</strong>
+    <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
+  </p>
 
 </div>
+
 
 <div class="col">
   <div class="card shadow-sm">

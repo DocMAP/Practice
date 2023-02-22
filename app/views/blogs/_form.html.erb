@@ -26,8 +26,15 @@
         <%= form.text_area :body, placeholder: 'Content', rows: 10 %>
       </div>
       <div>
-        <%= form.label :topic, style: "display: block" %>
-        <%= form.text_field :topic_id %>
+        <%= form.label :topic_id, style: "display: block" %>
+        <%= form.collection_select(:topic_id, Topic.all, :id, :title,
+                                    {
+                                      selected: blog.topic_id,
+                                      include_blank: true
+                                    },
+                                    class: 'form-control'
+                                    )
+         %>
       </div>
     </div>
     <div class="col-md-5">
