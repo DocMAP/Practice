@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :topics, only: [:index, :show] 
+
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'log out', sign_up: 'register' }
 
 #nested routes - remember to change the directories in controllers and views:
