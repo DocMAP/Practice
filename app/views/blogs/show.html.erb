@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @blog %>
+<div class="row">
+  <div class="col-md-8">
+    <%= render @blog %>
+  </div>
+  <%= render "shared/blog_sidebar" %>
+</div>
 
 <div>
   <%= link_to "Edit this blog", edit_blog_path(@blog) if logged_in?(:admin, :editor) %>
