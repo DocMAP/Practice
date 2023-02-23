@@ -17,14 +17,17 @@
   <div class="row d-flex w-100 px-5">
     <div class="col-md-7 text-left justify-content-center px-5">
       <div>
-        <%= form.text_field :title, placeholder: 'Title' %>
+        <%= form.text_field :title, placeholder: 'Title', class: 'form-control' %>
       </div>
 
       <br>
 
       <div>
-        <%= form.text_area :body, placeholder: 'Content', rows: 10 %>
+        <%= form.text_area :body, placeholder: 'Content', rows: 10, class: 'form-control' %>
       </div>
+
+      <br>
+
       <div>
         <%= form.label :topic_id, style: "display: block" %>
         <%= form.collection_select(:topic_id, Topic.all, :id, :title,
@@ -40,7 +43,19 @@
     <div class="col-md-5">
       <div>
         <%= form.label :comments, style: "display: block" %>
-        <%= form.text_field :comments %>
+        <%= form.text_area :comments, class: 'form-control', rows: 5 %>
+      </div>
+            <br>
+
+      <div>
+        <%= form.label :status, style: "display: block" %>
+        <%= form.radio_button :status, 'draft' %>
+        <%= form.label :status, 'Draft' %>
+
+        <br>
+
+        <%= form.radio_button :status, 'published' %>
+        <%= form.label :status, 'Published' %>
       </div>
     </div>
   </div>
