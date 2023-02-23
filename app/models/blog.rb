@@ -6,8 +6,13 @@ class Blog < ApplicationRecord
   validates_presence_of :title, :body
 
   belongs_to :topic
-  end
+    delegate :title, to: :topic, prefix: true, allow_nil: true
 
   def self.by_position
     order("position ASC")
   end
+
+  def self.recent
+    order("created_at DESC")
+  end
+end

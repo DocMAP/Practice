@@ -1,0 +1,9 @@
+<h1><%= @topic.title %></h1>
+
+<%= link_to "Back to Topics", topics_path %>
+
+<%= paginate @blogs %>
+
+<%= render @blogs %>
+
+<%= paginate @blogs %>

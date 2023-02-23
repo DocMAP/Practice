@@ -30,10 +30,7 @@
 
     <ul>
       <%= form.fields_for :technologies do |technology_form| %>
-      <li>
-        <%= technology_form.label :technology %>
-        <%= technology_form.text_field :name %>
-      </li>
+        <%= link_to_add_association 'Add Technology', form, :technologies %>
       <% end %>
     </ul>
 

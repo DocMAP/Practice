@@ -14,10 +14,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
+    <div id="background"></div>
+
   <body>
     <%= source_helper("application") %>
 
     <%= yield %>
+
+    <%= render 'shared/alerts' %>
 
   </body>
 </html>

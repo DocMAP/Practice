@@ -1,18 +1,28 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[ show edit update destroy toggle_status]
+  before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toggle_status]
+
   layout "blogs"
   access all: [:show, :index], user: {except: [:destroy, :new, :edit, :update, :toggle_status]}, admin: :all, editor: {except: [:toggle_status]}
 
   # GET /blogs or /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    if logged_in?(:admin, :editor)
+      @blogs = Blog.recent.page(params[:page]).per(5)
+    else
+      @blogs = Blog.published.recent.page(params[:page]).per(5)
+    end
     @browser_title = "Blogs Page"
   end
 
   # GET /blogs/1 or /blogs/1.json
   def show 
-    @browser_title = @blog.title
-    @seo_keywords = @blog.body
+    if logged_in?(:admin, :editor) || @blog.published?
+      @browser_title = @blog.title
+      @seo_keywords = @blog.body
+    else
+      redirect_to blogs_path, notice: "You are not authorized to view this page"
+    end
   end
 
   # GET /blogs/new
@@ -83,8 +93,13 @@ class BlogsController < ApplicationController
       params.require(:blog).permit(:title, 
                                    :body,
                                    :comments,
-                                   :topic_id )
+                                   :topic_id,
+                                   :status )
     end
+
+  def set_sidebar_topics
+    @side_bar_topics = Topic.with_blogs
   end
+end
 
 

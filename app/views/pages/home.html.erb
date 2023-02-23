@@ -1,14 +1,14 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h5 class="float-md-start mb-0">by Mark Popwell</h5>
+      <h5 class="float-md-start mb-0">Welcome <%=current_user.first_name %>!</h5>
         <nav class="nav nav-masthead justify-content-center float-md-end">
           <%= render "shared/application_nav" %>
         </nav>
     </div>
   </header>
 </div>
-<h4>Welcome <%=current_user.first_name %>!</h4>
+
 <h1>Home Page</h1>
 <head>
     <title><%= @browser_title %></title>
@@ -28,8 +28,6 @@
         font-size: 36px;
         font-style: italic;
         border: double;
-        width: 80%;
-        margin-left: 10%;
         display: flex;
         justify-content: center;
         text-shadow: 2px 2px 4px #000000;
@@ -38,6 +36,8 @@
       h2 {
         font-size: 30px;
         font-style: italic;
+        width: 80%;
+        margin-left: 10%;
         border: single;
         display: flex;
         justify-content: center;
@@ -64,14 +64,19 @@
       .portfolio_titles {
         display: flex;
         justify-content: center;
+        margin-right: 40%;
         color: hotpink;
+      }
+
+      .Bio {
+        margin-left: 10%;
+        margin-right: 10%;
       }
     </style>
   </head>
   <body>
     <br>
-    <h2>Imported HTML from VS Code</h2>
-    <img src="images/Formated_6013.png" alt="image could not be displayed" />
+    <%= image_tag "Profile.jpeg", width: 200, alt: "image could not be displayed" %>
     <p class="username">
       Follow on
       <a href="https://twitter.com/MarkPopwell" target="_blank"><%= fa_icon "twitter" %>  Twitter</a>
@@ -79,7 +84,7 @@
       <a href="https://facebook.com/" target="_blank">Facebook</a>
       that I will never see. . . totally up to you.
     </p>
-    <p>
+    <p class="Bio">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni veniam
       molestiae eligendi quam. Inventore vitae expedita, quibusdam dolorum iure
       placeat necessitatibus fugiat eum suscipit distinctio laboriosam magnam
@@ -88,9 +93,12 @@
       quibusdam quam est necessitatibus ratione eligendi. Nihil inventore
       deleniti dolores iure quisquam quo at totam labore amet! Laudantium
       dignissimos odio accusamus perspiciatis voluptatem eveniet est, quidem,
-      dicta, corrupti vitae earum. In sunt neque nam? Ut mollitia eos optio ab
-      dolor, officia fugit similique amet vero quae dolorum voluptatem.
+      dicta, corrupti vitae earum. Vero in suscipit
+      sunt tempore illo maiores harum sequi necessitatibus magnam qui,
+      temporibus nihil veritatis, dignissimos rerum libero.
     </p>
+    <br>
+    <br>
     <h3> Column Section</h3>
     <div class="columns">
       Incidunt animi sapiente et molestias officia eius iusto hic beatae odit
@@ -105,9 +113,11 @@
       veniam soluta reprehenderit aspernatur ex architecto repellat enim non.
       Doloribus!
     </div>
+    <br>
   </body>
 
-<h1><%= link_to "Current Portfolio Item Titles:", portfolios_path %></h1>
+<h1>Current Portfolio Item Titles:</h1>
+<br>
       <% @portfolio_items.each do |portfolio_item| %>
       <div class="portfolio_titles">
         <p><%= portfolio_item.title %></p>
@@ -115,14 +125,16 @@
     <% end %>
 
 
-<h1><%= link_to "Blog Posts", blogs_path %></h1>
+<h1><%= link_to "Blog Posts:", blogs_path %></h1>
 <%= @posts.inspect %>
 
 <h1>Skills</h1>
 <%= @skills.inspect %>
+<hr>
+<br>
 
 
-  <footer class="mt-auto text-white-50">
+  <footer class="mt-auto text-white-50 justify-content-center d-flex">
     <p>Homepage created with <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/MarkPopwell" class="text-white">@MarkPopwell</a>.</p>
   </footer>
 </div>
