@@ -1,11 +1,15 @@
 <div class="col-md-4">
-  <div class="position-sticky" style="top: 2rem;">
-    <br>
-    <br>
-    <br>
+  <div class="position-sticky" style="top: 5rem;">
     <div class="p-4 mb-3 bg-light rounded">
       <h4 class="fst-italic">About This Blog</h4>
       <p class="mb-0">This is a practice app to learn functionality and much of the formatting has been skipped for the sake of time.</p>
+    </div>
+
+    <div class="p-4">
+      <h4 class="fst-italic">Current Topics:</h4>
+        <% @side_bar_topics.each do |topic| %>
+        <p><%= link_to topic.title, topic_path(topic) %></p>
+      <% end %>
     </div>
 
     <div class="p-4">
@@ -24,13 +28,6 @@
         <li><a href="#">May 2022</a></li>
         <li><a href="#">April 2022</a></li>
       </ol>
-    </div>
-
-    <div class="p-4">
-      <h4 class="fst-italic">Current Topics:</h4>
-        <% @side_bar_topics.each do |topic| %>
-        <p><%= link_to topic.title, topic_path(topic) %></p>
-      <% end %>
     </div>
 
     <div class="p-4">

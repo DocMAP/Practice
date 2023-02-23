@@ -2,7 +2,7 @@
   <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
     <header class="mb-auto">
       <div>
-        <h5 class="float-md-start mb-0">With Sticky Nav Bar</h5>
+        <h5 class="float-md-start mb-0 p-3">With Sticky Nav Bar</h5>
           <nav class="nav nav-masthead justify-content-center float-md-end">
             <%= render "shared/application_nav" %>
           </nav>
@@ -13,7 +13,6 @@
 
 
 <h1>Blogs</h1>
-<%= link_to "Create New blog", new_blog_path if logged_in?(:admin, :editor) %>
 
 <div class="container">
   <header class="blog-header lh-1 py-3">
@@ -91,11 +90,25 @@
     </div>
   </div>
 
+  <hr>
+
+    <%= link_to "Create New blog", new_blog_path if logged_in?(:admin, :editor) %>
+    <h2 class="text-center" style="text-decoration: underline;"><%= Date.current %></h2>
+
   <div class="row g-5">
     <div class="col-md-8">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        From the Firehose
+        Recent Posts:
       </h3>
+      <div id="blogs">
+        <% @blogs.each do |blog| %>
+          <%= render blog %>
+        <% end %>
+
+        <div class="justify-content-center d-flex">
+          <p><%= paginate @blogs %></p>
+        </div>
+      </div>
 
       <article class="blog-post">
         <h2 class="blog-post-title mb-1">Sample blog post</h2>
@@ -224,22 +237,4 @@
   </div>
 
 </main>
-
-
-<div id="blogs">
-  <% @blogs.each do |blog| %>
-    <%= render blog %>
-    
-    <p> <%= link_to blog.status, toggle_status_blog_path(blog) if logged_in?(:admin)%>
-    </p>
-    <p>
-      <%= link_to "Show this blog", blog %>
-      <%= link_to "Delete this blog", @blogs_path, method: :delete if logged_in?(:admin, :editor) %>
-      <%= button_to "Delete this blog", @blog, data: { turbo: true, turbo_method: :delete }, class: 'btn btn-outline-danger' if logged_in?(:admin, :editor) %>
-    </p>
-  <% end %>
-
-  <%= paginate @blogs %>
-</div>
-
 

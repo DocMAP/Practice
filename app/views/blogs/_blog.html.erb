@@ -1,27 +1,58 @@
 <div id="<%= dom_id blog %>">
-  <p>
-    <strong>Blog Title:</strong>
-    <%= blog.title %>
-  </p>
+<div class="container px-3">
+<div class="row">
+  <div class="col-md-4">
+    <br>
+    <br>
+    <br>
+      <p>
+        <strong>Topic:</strong>
+        <%= blog.topic_title %>
+      </p>    
+  </div>
+  <div class="col-md-8 background-white" style="background-color: white; border-color: black; border-style: solid;">
+    <br>
+    <h3 class="text-center" style="text-decoration: underline;"><%= blog.title %></h3>
+          <p>Written By:</p>
+      <hr>
+      <br>
+      <%= blog.body %>
+      <br>
+      <br>
+      <hr>
+      <p class="text-center"><%= link_to "Continue Reading . . .", blog %></p>
+  </div>
 
-  <p>
-    <strong>Content:</strong>
-    <%= blog.body %>
-  </p>
 
-  <p>
-    <strong>Comments:</strong>
-    <%= blog.comments %>
-  </p>
+    <div class="col-md-4 px-3">
+      <br>
+      <p>
+        <%= link_to blog.status, toggle_status_blog_path(blog) if logged_in?(:admin)%>
+      </p>
+    </div>
+    <div class="col-md-8 text-center">
+      <br>
+      <p>
+      <strong>Posted:</strong>
+        <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
+      </p>
+    </div>
 
-</p>
-    <strong>Topic:</strong>
-    <%= blog.topic_title %>
-  </p>
+    <br>
 
-<p>
-  <strong>Posted:</strong>
-    <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago
-  </p>
 
+    <div class="col-md-4 px-3">
+      <p>
+        <strong>Comments:</strong>
+      </p>
+    </div>
+    <div class="col-md-8" style="background-color: white; border-color: black; border-style: solid;">
+      <p>
+      <%= blog.comments %>
+      </p>
+    </div> 
+  </div>
+
+</div>
+ <hr>
 </div>
