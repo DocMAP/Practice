@@ -4,12 +4,28 @@
 <div class="row px-3">
   <div class="col-md-8">
     <%= render @blog %>
-    <div>
-      <%= link_to "Edit this blog", edit_blog_path(@blog) if logged_in?(:admin, :editor) %>
-      <%= link_to "Back to blogs", blogs_path %>
+    <div class="row">
+      <div class="col-md-4 justify-content-center d-flex">
+          <%= button_to "Delete this blog", @blog, method: :delete, class: 'btn btn-sm btn-outline-danger' if logged_in?(:admin, :editor) %>
 
-      <%= button_to "Delete this blog", @blog, method: :delete, class: 'btn btn-outline-danger' if logged_in?(:admin, :editor) %>
+          <p style="color: whitesmoke;">  /  / /</p>
+
+          <%= link_to "Edit this blog", edit_blog_path(@blog) if logged_in?(:admin, :editor) %>
+
+      </div>
+      <div class="col-md-8 justify-content-center d-flex">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+            <li class="breadcrumb-item"><%= link_to "Back to blogs", blogs_path %></li>
+            <%= link_to @blog.topic.title, topic_path(@blog.topic), class: 'breadcrumb-item' %>
+            <li class="breadcrumb-item"><%= link_to "Go to Topics", topics_path %></li>
+            <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+          </ol>
+        </nav>
+      </div>
     </div>
+
   </div>
     <%= render "shared/blog_sidebar" %>
 </div>
