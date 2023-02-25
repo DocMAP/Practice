@@ -22,22 +22,6 @@
       text-decoration: underline;
     }
 
-      #background {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background: image-url('Coffee.jpg') no-repeat;
-    background-size: cover;
-  }
-
-
     .other {
       column-count: 4;
     }
@@ -51,7 +35,7 @@
 <div class="container p-3">
   <div class="row px-3 justify-content-end">
     <div class="col-md-6 p-3">
-      <%= image_tag "MarkbyRiver.JPG", width: 400, alt: "You Don't get to see the jeep by the river" %>
+      <%= image_tag "MarkbyRiver.JPG", width: 400, alt: "You Don't get to see the jeep by the river", class: "profile-img" %>
       <p>Down by the Snake River</p>
     </div>
     <div class="col-md-6 p-2">
@@ -60,23 +44,40 @@
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
           doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
           inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+          Nemo enim ipsam voluptatem quia voluptas . . .          <button class="btn btn-outline-dark" 
+                      type="button" 
+                      data-toggle="collapse"
+                      data-target="#biography"
+                      aria-expanded="false"
+                      aria-controls="biography">
+                show more
+              </button>
+        </p>
+
+              <div class="collapse" id="biography">
+                 sit aspernatur aut odit aut
           fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
           sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
           amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora voluptatem quia voluptas sit aspernatur aut odit aut
           fugit, sed quia consequuntur magni dolores eos qui ratione.
-        </p>
+
+                <div class="card card-body">
+                  Or it could be in a card styled however I want. . . including images:
+                  <%= image_tag "3nails.jpg", width: 64 %>
+                </div>
+              </div>
+
       </div>
         
   </div>
 </div>
 
-    <div class="row d-flex w-100">
+    <div class="row d-flex w-100 px-4">
       <div class="col-md-6 justify-content-left d-flex">
-            <%= image_tag "JamiebyRiver.jpg", width: 400, alt: "You Don't get to see her by the river either" %>
+            <%= image_tag "JamiebyRiver.jpg", width: 400, alt: "You Don't get to see her by the river either", class: "profile-img" %>
       </div>
         <div class="col-md-6 justify-content-end align-right d-flex">
-            <%= image_tag "GoldenGateBridge.jpg", width: 400, alt: "Popwell brothers by Golden Gate Bridge" %>
+            <%= image_tag "GoldenGateBridge.jpg", width: 400, alt: "Popwell brothers by Golden Gate Bridge", class: "profile-img" %>
       </div>
         <div class="col-md-6">
           <p>Jamie by the Snake River</p>
@@ -121,7 +122,8 @@
       laboriosam cum vitae explicabo cumque dolores repudiandae enim.
     </div>
     <br>
-
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
   </body>
 </html>
 
