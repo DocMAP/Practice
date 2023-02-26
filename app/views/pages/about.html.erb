@@ -122,6 +122,105 @@
       laboriosam cum vitae explicabo cumque dolores repudiandae enim.
     </div>
     <br>
+    <hr>
+
+<div class="row">
+  <div class="col-md-2">
+    
+  </div>
+  <div class="col-md-7">
+        <div class="app-card-container">
+      <div class="card p-3">
+        <h3>About Me Alternative</h3>
+        <div class="row">
+          <div class="col-md-5">
+            <%= image_tag "MarkbyRiver.JPG", width: 300, alt: "You Don't get to see the jeep by the river", class: "about-img" %>
+            <div class="skills">
+              <% @skills.each do |skill| %>
+                <div class="skill">
+                    <h5><%= skill.title %></h5>
+                  <div class="progress">
+                    <div 
+                      class="progress-bar progress-bar-striped bg-success"
+                      role="progressbar"
+                      aria-valuenow="<%= skill.percent_utilized %>"
+                      aria-valuemax="100"
+                      style="width: <%= skill.percent_utilized %>%"
+                    ></div>
+                  </div>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+
+          <div class="col-md-7">
+            <p>
+              some content
+            </p>
+            <p>
+              here too
+            </p>
+            <p>
+              <button class="btn btn-outline-dark" 
+                      type="button" 
+                      data-toggle="collapse"
+                      data-target="#jobHistory"
+                      aria-expanded="false"
+                      aria-controls="jobHistory">
+                Job History
+              </button>
+
+              <button class="btn btn-outline-dark" 
+                      type="button" 
+                      data-toggle="collapse"
+                      data-target="#education"
+                      aria-expanded="false"
+                      aria-controls="education">
+                Education
+              </button>
+            </p>
+
+              <div class="collapse" id="jobHistory">
+                 Something about Jobs?:
+
+                <div class="card card-block">
+                  Job1 - changing to card-block changes padding and gives margin top+bot 5px
+                </div>
+
+                <div class="card card-body">
+                  Job2 Longer Text will expand the height of the card but not the width      
+                </div>
+
+                <div class="card card-body">
+                  Job3 
+                </div>
+
+              </div>
+
+              <div class="collapse" id="education">
+                   School1
+                  <div class="card card-body">
+                    Or it could be in a card :
+                    
+                  </div>
+              </div>
+          </div>
+
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    
+  </div>  
+</div>
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
   </body>

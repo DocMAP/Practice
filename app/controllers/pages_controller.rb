@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
   def about
     @browser_title = "Biography"
+    @skills = Skill.all
   end
 
   def contact
