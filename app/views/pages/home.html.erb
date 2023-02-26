@@ -181,9 +181,9 @@
       temporibus nihil veritatis, Consequuntur praesentium sint facere
       quibusdam quam est necessitatibus ratione eligendi. dignissimos rerum libero, voluptatum tempora
       veniam soluta reprehenderit aspernatur ex architecto repellat enim non.
-      Doloribus! Dolore, itaque soluta molestiae repudiandae voluptates,
-      neque blanditiis, Dolore, itaque soluta molestiae repudiandae voluptates,
-      neque blanditiis, <button class="btn btn-outline-dark" 
+      Doloribus! Dolore, itaque soluta molestiae repudiandae voluptates, repudiate
+      neque blanditiis, lorem itaque soluta molestiae et filie espiritu
+           . . . <button class="btn btn-outline-dark" 
                       type="button" 
                       data-toggle="collapse"
                       data-target="#biography"
@@ -192,9 +192,7 @@
                 show more
               </button>
             <div class="collapse" id="biography">
-                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora voluptatem quia voluptas sit aspernatur aut odit aut
-                fugit, sed quia consequuntur magni dolores eos qui ratione. Consequuntur praesentium sint facere quibusdam quam est necessitatibus ratione eligendi. Consequuntur praesentium sint facere quibusdam quam est necessitatibus ratione eligendi. Consequuntur praesentium sgendi.
-
+                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora voluptatem quia voluptas sit aspernatur aut odit aut esppiritu santu amen y mas aqui tambien veniam soluta reprehenderit aspernatur
               <div class="card card-body p-3">
                   Instead of just more text it could be multiple cards styled however I want. . . including images that flip:
               </div>
@@ -216,22 +214,48 @@
             </div>
         </div>
     <br>
+    <br>
   </body>
 
 <h1>Current Portfolio Item Titles:</h1>
 <br>
+<div class="row">
+  <div class="col">
     <% @portfolio_items.each do |portfolio_item| %>
       <div class="portfolio_titles">
         <p><%= portfolio_item.title %></p>
       </div>
     <% end %>
+  </div>
 
+    <div class="col-md-4 p-3">
+    <div class="card">
+    <h3>Skill Percent Utilized</h3>
+
+      <div class="skills px-3">
+        <% @skills.each do |skill| %>
+          <div class="skill">
+              <h5><%= skill.title %></h5>
+            <div class="progress">
+              <div 
+                class="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                aria-valuenow="<%= skill.percent_utilized %>"
+                aria-valuemax="100"
+                style="width: <%= skill.percent_utilized %>%"
+              ></div>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <h1><%= link_to "Blog Posts:", blogs_path %></h1>
   <%= @posts.inspect %>
 
-<h1>Skills</h1>
-  <%= @skills.inspect %>
 <hr>
 
 <br>
