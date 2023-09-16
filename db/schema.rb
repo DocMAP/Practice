@@ -21,7 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_214833) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
-    t.integer "status", default: 0, null: false
     t.bigint "topic_id"
     t.integer "position"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
@@ -57,7 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_214833) do
     t.integer "percent_utilized"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "badge"
   end
 
   create_table "technologies", force: :cascade do |t|
@@ -93,5 +91,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_214833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "blogs", "topics"
   add_foreign_key "technologies", "portfolios"
 end
